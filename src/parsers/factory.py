@@ -5,6 +5,7 @@ from typing import Type
 from .base import Parser
 from .txt_parser import TxtParser
 from .docx_parser import DocxParser
+from .code_parser import CodeParser
 
 
 class ParserFactory:
@@ -13,6 +14,17 @@ class ParserFactory:
     _map: dict[str, Type[Parser]] = {
         ".txt": TxtParser,
         ".docx": DocxParser,
+        # Arquivos de código
+        ".py": CodeParser,
+        ".js": CodeParser,
+        ".ts": CodeParser,
+        ".java": CodeParser,
+        ".cpp": CodeParser,
+        ".c": CodeParser,
+        ".cs": CodeParser,
+        ".rb": CodeParser,
+        ".go": CodeParser,
+        ".php": CodeParser,
     }
 
     @classmethod
