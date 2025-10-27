@@ -2,3 +2,4 @@ gTTS==2.5.4
 python-docx==0.8.11
 pyttsx3==2.90
 rich==13.6.0
+pydub==0.25.1
