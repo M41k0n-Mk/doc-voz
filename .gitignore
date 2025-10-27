@@ -1,0 +1,39 @@
+# Ambiente Virtual Python
+.venv/
+venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de saída gerados
+out/
+*.mp3
+*.wav
+*.m4a
+
+# Arquivos temporários
+*.tmp
+*_temp.txt
+teste.*
+
+# Logs
+*.log
+
+# Configuração IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Documentação duplicada/temporária
+README_COMPLETO.md
+
+# Arquivos de teste na raiz (mantém só os em examples/)
+arquivo_teste.txt

@@ -1,0 +1,3 @@
+Este é um texto de exemplo.
+Ele serve para testar a geração de áudio.
+Bom aprendizado e boa sorte no seu projeto!
