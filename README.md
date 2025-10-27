@@ -8,6 +8,7 @@ DocuVoz é uma ferramenta poderosa e modular que converte documentos (.txt e .do
 
 - 📝 **Suporte a múltiplos formatos**: TXT e DOCX (expansível para PDF, etc.)
 - 🎵 **Múltiplas engines de voz**: gTTS (online) e pyttsx3 (offline)
+- 🧩 **Chunking automático**: Processa arquivos grandes sem limites de tamanho
 - 🏗️ **Arquitetura modular**: Fácil de estender com novos formatos e vozes
 - 🎨 **Interface elegante**: CLI com logging colorido usando Rich
 - 🌐 **Multiplataforma**: Windows, macOS e Linux
@@ -151,6 +152,11 @@ python -m src.main livro.txt --engine gtts --output audiobook/capitulo1.mp3
 - ✅ Verifique sua conexão com a internet
 - ✅ Use pyttsx3 como alternativa offline: `--engine pyttsx3`
 
+### 📄 Arquivos Muito Grandes
+- ✅ **gTTS suporta arquivos de qualquer tamanho** com chunking automático
+- ✅ Textos >5000 caracteres são divididos inteligentemente
+- ✅ Chunks são combinados automaticamente em um único áudio
+
 ---
 
 ## 🏗️ Estrutura do Projeto
@@ -176,7 +182,22 @@ doc-voz/
 
 ---
 
-## 🚀 Recursos Avançados
+### 🚀 Recursos Avançados
+
+### 🧩 **Chunking Automático (Nova Funcionalidade!)**
+
+O gTTS agora processa arquivos de **qualquer tamanho**:
+
+- **📏 Arquivos pequenos** (≤5000 chars): Processamento direto
+- **📚 Arquivos grandes** (>5000 chars): Divisão automática + combinação
+- **🧠 Chunking inteligente**: Respeita pontuação e parágrafos
+- **🔊 Áudio contínuo**: Chunks combinados com pausas naturais
+
+**Exemplo com arquivo grande:**
+```bash
+python -m src.main documento_longo.txt --engine gtts
+# Resultado: Texto dividido em chunks → Múltiplos MPs3 → Arquivo único final
+```
 
 ### 🎛️ Opções da Linha de Comando
 
