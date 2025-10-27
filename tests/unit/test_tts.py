@@ -175,8 +175,9 @@ class TestGTTSEngine:
         
         # Assert
         assert mock_audio_segment.from_mp3.call_count == 2
-        # Verifica se += foi chamado (combine audio segments)
-        assert mock_combined.__iadd__.call_count == 2
+        # Verifica se += foi chamado (combine audio segments + silences)
+        # 2 arquivos + 1 silêncio entre eles + silêncio final = 4 operações
+        assert mock_combined.__iadd__.call_count == 4
         mock_combined.export.assert_called_once_with(str(output_path), format="mp3")
     
     @patch('src.tts.gtts_engine.gTTS')
