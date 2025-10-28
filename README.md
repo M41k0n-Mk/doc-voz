@@ -152,6 +152,15 @@ python -m src.main livro.txt --engine gtts --output audiobook/capitulo1.mp3
 - ✅ Verifique sua conexão com a internet
 - ✅ Use pyttsx3 como alternativa offline: `--engine pyttsx3`
 
+### ⚠️ Erro "No module named 'audioop'" (Windows/Linux)
+Se você receber um erro relacionado ao módulo `audioop`, especialmente em versões mais recentes do Python (3.13+), instale a dependência adicional:
+
+```bash
+pip install audioop-lts
+```
+
+> 💡 **Contexto**: O módulo `audioop` foi removido do Python 3.13+ e substituído pelo pacote `audioop-lts`. Este problema pode ocorrer tanto no Windows quanto no Linux.
+
 ### 📄 Arquivos Muito Grandes
 - ✅ **gTTS suporta arquivos de qualquer tamanho** com chunking automático
 - ✅ Textos >5000 caracteres são divididos inteligentemente
